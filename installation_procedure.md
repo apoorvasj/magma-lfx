@@ -9,9 +9,9 @@ You can learn more about the components <a href="https://www.youtube.com/watch?v
 Keep in mind, orchestrator and nms can be setup on the same machine whereas the AGW has to be setup on a separate machine/VM. First, we will walk through setting up NMS + orchestrator :)
 Before getting started, these were some resources I referred to- a mix of official docs and past contributor's guides. (as of Feb 2026, the official docs could be outdated and the docker based deployment is recommended to be the easiest one).
 <ol>
-<li> <a href= "https://magma.github.io/magma/docs/lte/deploy_install_docker"> Official docs </a>
+<li> <a href= "https://magma.github.io/magma/docs/lte/deploy_install_docker"> Official docs for Docker based AGW setup. </a>
+<li> <a href= "https://magma.github.io/magma/docs/basics/quick_start_guide">Magma Quick Start. </a>
 <li> <a href= "https://magma-installation-docs-laniw.surge.sh/">Lani's guide </a>
-<li> Kidus' guide
 </ol>
 This guide uses <b> DOCKER-BASED </b> deployment.<br><br>
 <h1> Prerequisites for the setup </h1>
