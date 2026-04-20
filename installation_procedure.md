@@ -67,6 +67,41 @@ Once the orchestrator is successfully built and you run ./run.py, you should see
 </ol>
 Yay! the orchestrator has been setup.<br><br>
 <h1> Setting up NMS </h1>
+
+1. Set the Magma root directory 
+
+```bash id="u7v8w9"
+export MAGMA_ROOT=${PWD}
+```
+
+2. Move to the NMS directory and build NMS services:
+
+```bash id="a4b5c6"
+cd ${MAGMA_ROOT}/nms
+docker-compose build
+``` 
+<br>
+<img src = "images/nms containers.png">
+
+3. After this, you will be able to access the UI by visiting https://magma-test.localhost, and using the email admin@magma.test and password password1234
+
+<br> 
+
+<img src = "images/nms ui.png">
+
+4. In case you experience 502 bad gateway error, wait for the container to start. However if it persists check the health of your container using docker ps.
+
+<img src = "images/502 Bad Gateway.png">
+<img src = "images/unhealthy container.png">
+
+5. In this case, kill the container using <code> docker kill *container id* </code> and start it again using <code> docker start *container id* </code>
+
+6. Open the networks menu and register your first network.
+
+<img src = "images/nms networks page.png">
+
+
+<br>
 <h1> Setting up AGW </h1>
 I installed the access gateway through an Ubuntu 20.04 VM. The software I used for this was VirtualBox. One of the most important things is while creating VM, I set the <b> networking configuration to bridge mode with 2 network interfaces. </b> (Make sure to do this as I encountered errors due to initially only setting up 1 network interface!) <br><br> 
 
@@ -192,6 +227,10 @@ sudo docker-compose exec magmad show_gateway_info.py
 ```
 
 **Note:** In the NMS UI, you are supposed to register the AGW using the hardware ID and challenge key displayed above.
+
+After the gateway successfully checks in, this is what the equipments page will look like.
+
+<img src = "images/gateway checkin.png">
 
 <h1> Debugging AGW setup </h1>
 This is the official debug docs which were quite helpful to me:
